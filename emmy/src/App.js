@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Menu from './Components/Menu';
+import Random from './Components/Random';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+     <Router>
+       <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            Eeny Meeny Miny Yo
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Switch>
+          <Route exact path="/">
+            <Menu />
+          </Route>
+          <Route path="/random">
+            <Random />
+          </Route>
+        </Switch>
+     </Router>
     );
   }
 }
