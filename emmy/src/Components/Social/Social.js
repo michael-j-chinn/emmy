@@ -9,6 +9,10 @@ import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+
+
 
 class Social extends Component {
     
@@ -109,6 +113,29 @@ class Social extends Component {
                   </Fab>
                 </form>
               </Grid>
+          </Grid>
+
+          <Grid container spacing={3}>
+            <Grid item>
+
+              
+              <TextField xs={6}
+                id="standard-number"
+                label="Number"
+                type="number"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                margin="normal"
+              />
+              <FormControl>
+                <Select displayEmpty>
+                  <MenuItem >minutes</MenuItem>
+                  <MenuItem >hours</MenuItem>
+                  <MenuItem >days</MenuItem>
+                </Select>
+                </FormControl>
+            </Grid>
           </Grid>
 
           
