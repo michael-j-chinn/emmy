@@ -10,7 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Menu from './Components/Menu';
 import Random from './Components/Random/Random';
-import Social from './Components/Social';
+import SocialContainer from './Components/Social';
 import PriorityContainer from './Components/Prioritised';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -33,7 +33,7 @@ class App extends Component {
 							<Random />
 						</Route>
 						<Route path="/social">
-							<Social />
+							<SocialContainer />
 						</Route>
 						<Route path="/prioritised">
 							<PriorityContainer />
