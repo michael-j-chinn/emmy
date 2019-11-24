@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Fab, Typography, Link } from '@material-ui/core';
+import { Fab, Typography, Link, CardContent } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete'
@@ -11,8 +11,20 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import Card from '@material-ui/core/Card';
 
-
+const styles = {
+	card: {
+		marginBottom: 10,
+		padding: 15
+	},
+	cardHeader: {
+		padding: 0
+	},
+	cardContent: {
+		padding: 0
+	}
+};
 
 class Social extends Component {
     
@@ -75,14 +87,15 @@ class Social extends Component {
   render() {
     let {options, newOption, socialNetworks} = this.state;
       return <Fragment>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <label>Type your question</label>       
-            </Grid> 
-            <Grid item xs={12}>    
-              <TextField id="question" label="question" multiline xs={12}/>
-            </Grid>
-              <label>Type your options</label>
+            <Card  className={classes.card}>
+              <CardContent>
+                <Typography variant="h5">Type your question</Typography>       
+                <TextField id="question" label="question" multiline xs={12}/>            
+              </CardContent>
+            </Card>
+            <Card className={classes.card}>
+              <CardContent>
+              <Typography variant="h5">Type your options</Typography>
               {
                   options.length 
                     ? options.map(o => 
@@ -113,12 +126,11 @@ class Social extends Component {
                   </Fab>
                 </form>
               </Grid>
-          </Grid>
+            </CardContent>
+          </Card>
 
-          <Grid container spacing={3}>
-            <Grid item>
-
-              
+          <Card className={classes.card}>
+            <CardContent>              
               <TextField xs={6}
                 id="standard-number"
                 label="Number"
@@ -135,34 +147,32 @@ class Social extends Component {
                   <MenuItem >days</MenuItem>
                 </Select>
                 </FormControl>
-            </Grid>
-          </Grid>
+            </CardContent>
+          </Card>
 
           
-          <Grid container spacing={3}>
+          <Card  className={classes.card}>
+            <CardContent>
             
-            <FormControl component="fieldset">
-              <FormGroup aria-label="position" row>
-                {
-                  socialNetworks.map((sn) => 
-                    <Grid item xs={12}>   
-                      <FormControlLabel
-                        name={sn.name}
-                        value={sn.name}
-                        control={<Switch color="primary" />}
-                        label={sn.name}
-                        labelPlacement="start"
-                      />
-                    </Grid>
-                  )
-                }
-              </FormGroup>
-            </FormControl>
-          </Grid>
-
-          <Link to="/social/success">
-            <Button variant="contained" color="primary">Share</Button>
-          </Link>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  {
+                    socialNetworks.map((sn) => 
+                      <Grid item xs={12}>   
+                        <FormControlLabel
+                          name={sn.name}
+                          value={sn.name}
+                          control={<Switch color="primary" />}
+                          label={sn.name}
+                          labelPlacement="end"
+                        />
+                      </Grid>
+                    )
+                  }
+                </FormGroup>
+              </FormControl>
+            </CardContent>
+          </Card>
         </Fragment>
       ;
     }
