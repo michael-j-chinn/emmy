@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 
 function SocialContainer(props) {
 	return <Fragment>
-		<Typography variant="h2">
+		<Typography variant="h4">
 			Social
 		</Typography>
 		<Social />

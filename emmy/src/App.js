@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import Menu from './Components/Menu';
 import Random from './Components/Random/Random';
 import SocialContainer from './Components/Social';
+import SocialSharingSuccess from './Components/Social/SocialSharingSuccess';
 import PriorityContainer from './Components/Prioritised';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -31,6 +32,9 @@ class App extends Component {
 					<Switch>
 						<Route path="/random">
 							<Random />
+						</Route>
+						<Route path="/social/success">
+							<SocialSharingSuccess />
 						</Route>
 						<Route path="/social">
 							<SocialContainer />
