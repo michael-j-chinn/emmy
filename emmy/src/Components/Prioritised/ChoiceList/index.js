@@ -16,7 +16,7 @@ const styles = {
 	}
 };
 
-class PriorityList extends Component {
+class ChoiceList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -83,8 +83,8 @@ class PriorityList extends Component {
 	}
 }
 
-PriorityList.propTypes = {
+ChoiceList.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PriorityList);
+export default withStyles(styles)(ChoiceList);
