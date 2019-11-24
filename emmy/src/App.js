@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -14,20 +15,32 @@ import SocialContainer from './Components/Social';
 import PriorityContainer from './Components/Prioritised';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+	root: {
+		backgroundColor: "#548235"
+	},
+	input: {
+		color: "white"
+	}
+};
 
 class App extends Component {
 	render() {
+		let { classes } = this.props;
+
 		return (
 			<Router>
-				<AppBar position="static">
+				<AppBar position="static" className={classes.root}>
 					<Toolbar>
 						<Typography variant="h6">
-							Eeny Meeny Miny Yo
+							My Decision Maker
 						</Typography>
 					</Toolbar>
 				</AppBar>
 				<CssBaseline />
-				<Box m={2}>
+				<Box m={2} style={{marginBottom:75}}>
 					<Switch>
 						<Route path="/random">
 							<Random />
@@ -48,4 +61,8 @@ class App extends Component {
 	}
 }
 
-export default App;
+App.propTypes = {
+	classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(App);

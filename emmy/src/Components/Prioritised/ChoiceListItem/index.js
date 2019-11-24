@@ -19,7 +19,7 @@ const styles = {
 	}
 };
 
-class PriorityListItem extends Component {
+class ChoiceListItem extends Component {
 	render() {
 		let { classes } = this.props;
 
@@ -46,8 +46,8 @@ class PriorityListItem extends Component {
 	}
 }
 
-PriorityListItem.propTypes = {
+ChoiceListItem.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PriorityListItem);
+export default withStyles(styles)(ChoiceListItem);
