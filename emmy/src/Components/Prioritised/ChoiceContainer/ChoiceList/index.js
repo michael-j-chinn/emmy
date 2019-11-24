@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
-import PriorityListItem from '../PriorityListItem';
+import PriorityListItem from '../../PriorityListItem';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from "@material-ui/core/styles";

@@ -13,6 +13,8 @@ import Menu from './Components/Menu';
 import Random from './Components/Random/Random';
 import SocialContainer from './Components/Social';
 import PriorityContainer from './Components/Prioritised';
+import ChoiceContainer from './Components/Prioritised/ChoiceContainer';
+import DecisionContainer from './Components/Prioritised/DecisionContainer';
 import Box from '@material-ui/core/Box';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from "@material-ui/core/styles";
@@ -40,13 +42,19 @@ class App extends Component {
 					</Toolbar>
 				</AppBar>
 				<CssBaseline />
-				<Box m={2} style={{marginBottom:75}}>
+				<Box m={2} style={{ marginBottom: 75 }}>
 					<Switch>
 						<Route path="/random">
 							<Random />
 						</Route>
 						<Route path="/social">
 							<SocialContainer />
+						</Route>
+						<Route exact path="/prioritised/decision">
+							<DecisionContainer />
+						</Route>
+						<Route path="/prioritised/choices">
+							<ChoiceContainer />
 						</Route>
 						<Route path="/prioritised">
 							<PriorityContainer />

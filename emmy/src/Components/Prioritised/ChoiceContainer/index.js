@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react';
 import { Link } from "react-router-dom";
-import PriorityList from './PriorityList';
+import ChoiceList from './ChoiceList';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-function PriorityContainer(props) {
+function ChoiceContainer(props) {
 	return <Fragment>
-		<Link to="/prioritised/choices">
+		<Link to="/prioritised/decision">
 			<Fab size="small" style={{ position: 'absolute', right: 10, backgroundColor: '#ed7d31' }}>
 				<NavigateNextIcon />
 			</Fab>
 		</Link>
 		<Typography variant="h4" style={{ marginBottom: 10 }}>
-			Priorities
+			Choices
 		</Typography>
-		<PriorityList />
+		<ChoiceList />
 	</Fragment>;
 }
 
-export default PriorityContainer;
+export default ChoiceContainer;
